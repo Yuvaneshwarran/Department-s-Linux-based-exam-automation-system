@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Details</title>
+</head>
+<body>
+    <h1>Enter Teacher Details</h1>
+    <form action="/" method="POST">
+        <label for="teacher">Select Teacher:</label>
+        <select name="teacher" id="teacher">
+            {% for teacher in teachers %}
+            <option value="{{ teacher[0] }}">{{ teacher[1] }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="exam">Exam:</label>
+        <input type="text" name="exam" id="exam">
+        <br>
+        <label for="starting_user">Starting User:</label>
+        <input type="number" name="starting_user" id="starting_user">
+        <br>
+        <label for="ending_user">Ending User:</label>
+        <input type="number" name="ending_user" id="ending_user">
+        <br>
+        <label for="class">Class:</label>
+        <input type="text" name="class" id="class">
+        <br>
+        <label for="class_status">Class Status:</label>
+        <input type="text" name="class_status" id="class_status">
+        <br>
+        <label for="exam_user_status">Exam User Status:</label>
+        <input type="text" name="exam_user_status" id="exam_user_status">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
