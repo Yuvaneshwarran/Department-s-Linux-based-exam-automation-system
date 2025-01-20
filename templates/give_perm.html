@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>give permission</title>
+</head>
+<body>
+    <h1>give permission</h1>
+    <form action="{{ url_for('give_perm') }}" method="post">
+        <label for="teacher">Select Teacher:</label>
+        <select name="teacher" id="teacher">
+            {% for teacher in teachers %}
+                <option value="{{ teacher[0] }}">{{ teacher[1] }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="class">Select Class:</label>
+        <select name="class" id="class">
+            {% for class in classes %}
+                <option value="{{ class }}">{{ class }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="exam">Select Exam:</label>
+        <select name="exam" id="exam">
+            {% for exam in exams %}
+                <option value="{{ exam }}">{{ exam }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">give permission</button>
+    </form>
+</body>
+</html>

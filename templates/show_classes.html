@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Classes</title>
+    <!-- Add your CSS styles here if needed -->
+    <style>
+        /* Add your CSS styles here */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teacher Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td>{{ teacher[0] }}</td> <!-- Assuming ID is stored at index 0 -->
+                <td>{{ teacher[1] }}</td> <!-- Assuming Name is stored at index 1 -->
+                <td>{{ teacher[3] }}</td> <!-- Assuming Logins is stored at index 3 -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

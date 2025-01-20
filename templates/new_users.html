@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Users Created</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        h3 {
+            color: #555;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .email-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .email-info p {
+            font-size: 18px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>New Users Created Successfully</h1>
+        <h2>Teacher: {{ teacher[1] }}</h2> <!-- Assuming teacher name is stored at index 1 -->
+        <h3>Exam: {{ new_users[0][2] }}</h3> <!-- Assuming exam name is stored at index 2 -->
+        <h3>Class: {{ new_users[0][5] }}</h3> <!-- Assuming class name is stored at index 5 -->
+
+        <h4>New Users:</h4>
+        <ul>
+            <li>Starting User: {{ new_users[0][3] }}, Ending User: {{ new_users[0][4] }}</li>
+        </ul>
+
+        <div class="email-info">
+            <p>Email sent to {{ teacher[2] }}</p> <!-- Assuming email is stored at index 2 -->
+        </div>
+    </div>
+</body>
+</html>

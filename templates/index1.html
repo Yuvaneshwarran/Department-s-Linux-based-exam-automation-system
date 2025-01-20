@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        li a {
+            display: block;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #333;
+        }
+        li a:hover {
+            background-color: #ddd;
+        }
+        .btn-group {
+            margin-top: 20px;
+        }
+        .btn-group button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teachers</h1>
+    <ul>
+        {% for teacher in teachers %}
+            <li>
+                <a href="{{ url_for('lock_users_for_selected_teacher', teacher=teacher[0]) }}">
+                    {{ teacher[1] }} ({{ teacher[3] }} logins)
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div class="btn-group">
+        <!-- Button to clear database -->
+        <a href="/clear_database"><button>Clear Database</button></a>
+    </div>
+</body>
+</html>
